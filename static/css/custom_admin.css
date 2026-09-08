@@ -156,44 +156,60 @@
 }
 
 /* -------------------------------------------------------------
-   Luxury ZarBelle Login Page Background & Card Styling
+   Luxury ZarBelle Login Page Background & Card Styling (Jazzmin)
    ------------------------------------------------------------- */
-body.login-page {
-    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.65)), url('/static/images/login_bg.png') no-repeat center center fixed !important;
+html,
+body,
+body.jazzmin-login-page,
+body.login-page,
+.jazzmin-login-page,
+.hold-transition.jazzmin-login-page {
+    background: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.7)), url('/static/images/login_bg.png') no-repeat center center fixed !important;
     background-size: cover !important;
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    background-attachment: fixed !important;
+    background-position: center !important;
+    min-height: 100vh !important;
 }
 
+.jazzmin-login-page,
+body.login-page {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+}
+
+.jazzmin-login-page .login-box,
 body.login-page .login-box {
-    width: 420px;
-    max-width: 92%;
-    margin: 0 auto;
+    width: 420px !important;
+    max-width: 94% !important;
+    margin: 20px auto !important;
 }
 
+.jazzmin-login-page .card,
 body.login-page .card {
-    background: rgba(254, 252, 248, 0.95) !important;
-    backdrop-filter: blur(20px) saturate(180%) !important;
-    -webkit-backdrop-filter: blur(20px) saturate(180%) !important;
-    border-radius: 1.5rem !important;
-    border: 1px solid rgba(223, 183, 67, 0.4) !important;
-    box-shadow: 0 25px 60px -10px rgba(0, 0, 0, 0.7), 0 0 35px rgba(223, 183, 67, 0.25) !important;
-    overflow: hidden;
+    background: rgba(254, 252, 248, 0.96) !important;
+    backdrop-filter: blur(25px) saturate(180%) !important;
+    -webkit-backdrop-filter: blur(25px) saturate(180%) !important;
+    border-radius: 1.6rem !important;
+    border: 1px solid rgba(223, 183, 67, 0.45) !important;
+    box-shadow: 0 30px 70px -10px rgba(0, 0, 0, 0.75), 0 0 40px rgba(223, 183, 67, 0.3) !important;
+    overflow: hidden !important;
 }
 
+.jazzmin-login-page .card-header,
 body.login-page .card-header {
     background: transparent !important;
     border-bottom: 1px solid rgba(223, 183, 67, 0.2) !important;
-    padding-top: 1.5rem;
-    padding-bottom: 1rem;
+    padding-top: 1.5rem !important;
+    padding-bottom: 1rem !important;
 }
 
+.jazzmin-login-page .card-body,
 body.login-page .card-body {
     padding: 1.75rem 2rem !important;
 }
 
+.jazzmin-login-page .btn-primary,
 body.login-page .btn-primary {
     background: linear-gradient(135deg, #dfb743 0%, #c59b27 50%, #9a7210 100%) !important;
     border: none !important;
@@ -205,12 +221,14 @@ body.login-page .btn-primary {
     transition: all 0.3s ease !important;
 }
 
+.jazzmin-login-page .btn-primary:hover,
 body.login-page .btn-primary:hover {
-    transform: translateY(-2px);
+    transform: translateY(-2px) !important;
     box-shadow: 0 8px 25px rgba(197, 155, 39, 0.6) !important;
     filter: brightness(1.08) !important;
 }
 
+.jazzmin-login-page .form-control,
 body.login-page .form-control {
     border-radius: 0.75rem !important;
     border: 1px solid #ded6ca !important;
@@ -219,13 +237,15 @@ body.login-page .form-control {
     background-color: #ffffff !important;
 }
 
+.jazzmin-login-page .form-control:focus,
 body.login-page .form-control:focus {
     border-color: #c59b27 !important;
     box-shadow: 0 0 0 0.2rem rgba(197, 155, 39, 0.25) !important;
 }
 
+.jazzmin-login-page .login-box-msg,
 body.login-page .login-box-msg {
-    font-weight: 600;
-    color: #2c2419;
-    font-size: 1rem;
+    font-weight: 600 !important;
+    color: #2c2419 !important;
+    font-size: 1rem !important;
 }
