@@ -233,3 +233,12 @@ JAZZMIN_UI_TWEAKS = {
         "success": "btn-success",
     },
 }
+
+CSRF_TRUSTED_ORIGINS = [
+    "https://crm.zarbelle.uz",
+    "https://zarbelle.uz",
+    "https://www.zarbelle.uz",
+    "http://crm.zarbelle.uz",
+    "http://zarbelle.uz",
+    "http://148.135.209.199",
+]
