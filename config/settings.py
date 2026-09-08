@@ -242,3 +242,7 @@ CSRF_TRUSTED_ORIGINS = [
     "http://zarbelle.uz",
     "http://148.135.209.199",
 ]
+
+LOGIN_REDIRECT_URL = '/'
+LOGOUT_REDIRECT_URL = '/login/'
+LOGIN_URL = '/login/'
