@@ -1,0 +1,17 @@
+[project]
+name = "estelifemed-back"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "aiogram>=3.31.0",
+    "django>=5.2.3",
+    "django-cors-headers>=4.7.0",
+    "django-jazzmin>=3.0.1",
+    "django-ninja>=1.4.3",
+    "paramiko>=5.0.0",
+    "psycopg[binary]>=3.3.5",
+    "python-dotenv>=1.1.0",
+    "uvicorn>=0.34.3",
+]

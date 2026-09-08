@@ -1,0 +1,112 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Zar belle CRM 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-09-07 22:50+0500\n"
+"PO-Revision-Date: 2026-09-07 22:50+0500\n"
+"Language: uz\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+msgid "Mijoz"
+msgstr "Mijoz"
+
+msgid "Mijozlar"
+msgstr "Mijozlar"
+
+msgid "Mijoz ismi"
+msgstr "Mijoz ismi"
+
+msgid "Telefon raqami"
+msgstr "Telefon raqami"
+
+msgid "Bog'lanildi"
+msgstr "Bog'lanildi"
+
+msgid "Potensial mijoz (Lead)"
+msgstr "Potensial mijoz (Lead)"
+
+msgid "Izoh"
+msgstr "Izoh"
+
+msgid "Yaratilgan sana"
+msgstr "Yaratilgan sana"
+
+msgid "Korzinkadagi mijoz"
+msgstr "Korzinkadagi mijoz"
+
+msgid "Korzinka (O'chirilganlar)"
+msgstr "Korzinka (O'chirilganlar)"
+
+msgid "Dastlab yaratilgan sana"
+msgstr "Dastlab yaratilgan sana"
+
+msgid "O'chirilgan sana"
+msgstr "O'chirilgan sana"
+
+msgid "Saqlanish muddati tugashi"
+msgstr "Saqlanish muddati tugashi"
+
+msgid "Qolgan saqlanish muddati"
+msgstr "Qolgan saqlanish muddati"
+
+msgid "Ha"
+msgstr "Ha"
+
+msgid "Yo'q"
+msgstr "Yo'q"
+
+msgid "Lead"
+msgstr "Lead"
+
+msgid "Oddiy"
+msgstr "Oddiy"
+
+msgid "Muddati tugagan"
+msgstr "Muddati tugagan"
+
+msgid "kun qoldi"
+msgstr "kun qoldi"
+
+msgid "Telegram Foydalanuvchi"
+msgstr "Telegram Foydalanuvchi"
+
+msgid "Telegram Foydalanuvchilar"
+msgstr "Telegram Foydalanuvchilar"
+
+msgid "Telegram ID"
+msgstr "Telegram ID"
+
+msgid "CRM Foydalanuvchisi"
+msgstr "CRM Foydalanuvchisi"
+
+msgid "Tizimga kirgan"
+msgstr "Tizimga kirgan"
+
+msgid "Username"
+msgstr "Username"
+
+msgid "To'liq ismi"
+msgstr "To'liq ismi"
+
+msgid "Tanlangan til"
+msgstr "Tanlangan til"
+
+msgid "Admin ruxsati"
+msgstr "Admin ruxsati"
+
+msgid "Faol"
+msgstr "Faol"
+
+msgid "Ro'yxatdan o'tgan sana"
+msgstr "Ro'yxatdan o'tgan sana"
+
+msgid "Telegram Bot Boshqaruvi"
+msgstr "Telegram Bot Boshqaruvi"
+
+msgid "Oʻzbekcha"
+msgstr "Oʻzbekcha"
+
+msgid "Русский"
+msgstr "Русский"

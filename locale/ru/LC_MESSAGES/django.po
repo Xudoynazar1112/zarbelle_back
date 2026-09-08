@@ -1,0 +1,112 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Zar belle CRM 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-09-07 22:50+0500\n"
+"PO-Revision-Date: 2026-09-07 22:50+0500\n"
+"Language: ru\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+msgid "Mijoz"
+msgstr "Клиент"
+
+msgid "Mijozlar"
+msgstr "Клиенты"
+
+msgid "Mijoz ismi"
+msgstr "Имя клиента"
+
+msgid "Telefon raqami"
+msgstr "Номер телефона"
+
+msgid "Bog'lanildi"
+msgstr "Связались"
+
+msgid "Potensial mijoz (Lead)"
+msgstr "Потенциальный клиент (Лид)"
+
+msgid "Izoh"
+msgstr "Комментарий"
+
+msgid "Yaratilgan sana"
+msgstr "Дата создания"
+
+msgid "Korzinkadagi mijoz"
+msgstr "Клиент в корзине"
+
+msgid "Korzinka (O'chirilganlar)"
+msgstr "Корзина (Удаленные)"
+
+msgid "Dastlab yaratilgan sana"
+msgstr "Дата первоначального создания"
+
+msgid "O'chirilgan sana"
+msgstr "Дата удаления"
+
+msgid "Saqlanish muddati tugashi"
+msgstr "Срок хранения до"
+
+msgid "Qolgan saqlanish muddati"
+msgstr "Оставшийся срок хранения"
+
+msgid "Ha"
+msgstr "Да"
+
+msgid "Yo'q"
+msgstr "Нет"
+
+msgid "Lead"
+msgstr "Лид"
+
+msgid "Oddiy"
+msgstr "Обычный"
+
+msgid "Muddati tugagan"
+msgstr "Срок истек"
+
+msgid "kun qoldi"
+msgstr "дн. осталось"
+
+msgid "Telegram Foydalanuvchi"
+msgstr "Пользователь Telegram"
+
+msgid "Telegram Foydalanuvchilar"
+msgstr "Пользователи Telegram"
+
+msgid "Telegram ID"
+msgstr "Telegram ID"
+
+msgid "CRM Foydalanuvchisi"
+msgstr "Пользователь CRM"
+
+msgid "Tizimga kirgan"
+msgstr "Авторизован"
+
+msgid "Username"
+msgstr "Имя пользователя"
+
+msgid "To'liq ismi"
+msgstr "Полное имя"
+
+msgid "Tanlangan til"
+msgstr "Выбранный язык"
+
+msgid "Admin ruxsati"
+msgstr "Права администратора"
+
+msgid "Faol"
+msgstr "Активен"
+
+msgid "Ro'yxatdan o'tgan sana"
+msgstr "Дата регистрации"
+
+msgid "Telegram Bot Boshqaruvi"
+msgstr "Управление Telegram ботом"
+
+msgid "Oʻzbekcha"
+msgstr "Узбекский"
+
+msgid "Русский"
+msgstr "Русский"
