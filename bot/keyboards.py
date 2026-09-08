@@ -79,7 +79,7 @@ def get_language_inline_keyboard() -> InlineKeyboardMarkup:
 
 
 def get_customers_list_keyboard(customers, page: int, total_pages: int, lang: str = "uz") -> InlineKeyboardMarkup:
-    """Mijozlar ro'yxati va sahifalash tugmalari"""
+    """Mijozlar ro'yxati va ixcham sahifalash (pagination) tugmalari"""
     inline_keyboard = []
 
     for c in customers:
@@ -91,16 +91,20 @@ def get_customers_list_keyboard(customers, page: int, total_pages: int, lang: st
         ])
 
     # Sahifalash (pagination) qatori
-    nav_row = []
-    if page > 1:
-        nav_row.append(InlineKeyboardButton(text="⬅️", callback_data=f"customers_page:{page - 1}"))
-    
-    nav_row.append(InlineKeyboardButton(text=f"{page}/{max(1, total_pages)}", callback_data="noop"))
-
-    if page < total_pages:
-        nav_row.append(InlineKeyboardButton(text="➡️", callback_data=f"customers_page:{page + 1}"))
-
     if total_pages > 1:
+        nav_row = []
+        if page > 1:
+            if page > 2:
+                nav_row.append(InlineKeyboardButton(text="⏮️ 1", callback_data="customers_page:1"))
+            nav_row.append(InlineKeyboardButton(text="⬅️", callback_data=f"customers_page:{page - 1}"))
+        
+        nav_row.append(InlineKeyboardButton(text=f"📄 {page}/{total_pages}", callback_data=f"page_info:{page}:{total_pages}"))
+
+        if page < total_pages:
+            nav_row.append(InlineKeyboardButton(text="➡️", callback_data=f"customers_page:{page + 1}"))
+            if page < total_pages - 1:
+                nav_row.append(InlineKeyboardButton(text=f"{total_pages} ⏭️", callback_data=f"customers_page:{total_pages}"))
+
         inline_keyboard.append(nav_row)
 
     return InlineKeyboardMarkup(inline_keyboard=inline_keyboard)
@@ -156,16 +160,20 @@ def get_trash_list_keyboard(trash_items, page: int, total_pages: int, lang: str 
             InlineKeyboardButton(text=btn_text, callback_data=f"view_trash:{t.id}:{page}")
         ])
 
-    nav_row = []
-    if page > 1:
-        nav_row.append(InlineKeyboardButton(text="⬅️", callback_data=f"trash_page:{page - 1}"))
-    
-    nav_row.append(InlineKeyboardButton(text=f"{page}/{max(1, total_pages)}", callback_data="noop"))
-
-    if page < total_pages:
-        nav_row.append(InlineKeyboardButton(text="➡️", callback_data=f"trash_page:{page + 1}"))
-
     if total_pages > 1:
+        nav_row = []
+        if page > 1:
+            if page > 2:
+                nav_row.append(InlineKeyboardButton(text="⏮️ 1", callback_data="trash_page:1"))
+            nav_row.append(InlineKeyboardButton(text="⬅️", callback_data=f"trash_page:{page - 1}"))
+        
+        nav_row.append(InlineKeyboardButton(text=f"📄 {page}/{total_pages}", callback_data=f"page_info:{page}:{total_pages}"))
+
+        if page < total_pages:
+            nav_row.append(InlineKeyboardButton(text="➡️", callback_data=f"trash_page:{page + 1}"))
+            if page < total_pages - 1:
+                nav_row.append(InlineKeyboardButton(text=f"{total_pages} ⏭️", callback_data=f"trash_page:{total_pages}"))
+
         inline_keyboard.append(nav_row)
 
     return InlineKeyboardMarkup(inline_keyboard=inline_keyboard)
@@ -194,3 +202,30 @@ def get_trash_card_keyboard(trash_id: int, lang: str = "uz", page: int = 1) -> I
         ],
     ]
     return InlineKeyboardMarkup(inline_keyboard=buttons)
+
+
+def get_search_results_keyboard(results, query: str, page: int, total_pages: int, lang: str = "uz") -> InlineKeyboardMarkup:
+    """Qidiruv natijalari uchun sahifalash tugmalari"""
+    inline_keyboard = []
+
+    for c in results:
+        connected_mark = "✅" if c.is_connected else "⏳"
+        lead_mark = "⭐️" if c.is_lead else ""
+        btn_text = f"{connected_mark}{lead_mark} {c.name} ({c.phone})"
+        inline_keyboard.append([
+            InlineKeyboardButton(text=btn_text, callback_data=f"view_customer:{c.id}:1")
+        ])
+
+    if total_pages > 1:
+        nav_row = []
+        if page > 1:
+            nav_row.append(InlineKeyboardButton(text="⬅️", callback_data=f"search_page:{query}:{page - 1}"))
+        
+        nav_row.append(InlineKeyboardButton(text=f"📄 {page}/{total_pages}", callback_data=f"page_info:{page}:{total_pages}"))
+
+        if page < total_pages:
+            nav_row.append(InlineKeyboardButton(text="➡️", callback_data=f"search_page:{query}:{page + 1}"))
+
+        inline_keyboard.append(nav_row)
+
+    return InlineKeyboardMarkup(inline_keyboard=inline_keyboard)

@@ -78,7 +78,7 @@ def set_user_language(telegram_id: int, language: str) -> bool:
 
 
 @sync_to_async
-def get_customers_list(page: int = 1, page_size: int = 6):
+def get_customers_list(page: int = 1, page_size: int = 5):
     total = Customer.objects.count()
     total_pages = (total + page_size - 1) // page_size if total > 0 else 1
     page = max(1, min(page, total_pages))
@@ -135,7 +135,7 @@ def delete_customer_to_trash(customer_id: int):
 
 
 @sync_to_async
-def get_trash_list(page: int = 1, page_size: int = 6):
+def get_trash_list(page: int = 1, page_size: int = 5):
     total = CustomerTrash.objects.count()
     total_pages = (total + page_size - 1) // page_size if total > 0 else 1
     page = max(1, min(page, total_pages))
@@ -169,12 +169,16 @@ def hard_delete_trash_customer(trash_id: int):
 
 
 @sync_to_async
-def search_customers_db(query: str):
-    return list(
-        Customer.objects.filter(
-            Q(name__icontains=query) | Q(phone__icontains=query) | Q(comment__icontains=query)
-        )[:15]
+def search_customers_db(query: str, page: int = 1, page_size: int = 5):
+    qs = Customer.objects.filter(
+        Q(name__icontains=query) | Q(phone__icontains=query) | Q(comment__icontains=query)
     )
+    total = qs.count()
+    total_pages = (total + page_size - 1) // page_size if total > 0 else 1
+    page = max(1, min(page, total_pages))
+    start = (page - 1) * page_size
+    end = start + page_size
+    return list(qs[start:end]), total, page, total_pages
 
 
 @sync_to_async

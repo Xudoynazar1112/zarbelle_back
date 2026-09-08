@@ -40,6 +40,19 @@ async def cancel_action_handler(message: Message, state: FSMContext):
     )
 
 
+# ---------------- NOOP / PAGE INFO CALLBACK ----------------
+@router.callback_query(F.data == "noop")
+@router.callback_query(F.data.startswith("page_info:"))
+async def page_info_callback(callback: CallbackQuery):
+    if ":" in callback.data:
+        _, page, total_pages = callback.data.split(":")
+        lang = await get_user_language(callback.from_user.id)
+        info_text = f"📄 {page}-sahifa (Jami: {total_pages})" if lang == "uz" else f"📄 Страница {page} (Всего: {total_pages})"
+        await callback.answer(info_text, show_alert=False)
+    else:
+        await callback.answer()
+
+
 # ---------------- MIJOZLAR RO'YXATI (LIST) ----------------
 @router.message(F.text.in_(["👥 Mijozlar ro'yxati", "👥 Список клиентов"]))
 async def customers_list_handler(message: Message, state: FSMContext):
@@ -329,7 +342,6 @@ async def add_customer_comment_step(message: Message, state: FSMContext):
     text = message.text.strip()
     lang = await get_user_language(message.from_user.id)
 
-    # Agar o'tkazib yuborish bosilgan bo'lsa
     comment = None if ("O'tkazib yuborish" in text or "Пропустить" in text or "⏭️" in text) else text
 
     data = await state.get_data()

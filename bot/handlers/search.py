@@ -1,9 +1,9 @@
 from aiogram import Router, F
-from aiogram.types import Message, InlineKeyboardMarkup, InlineKeyboardButton
+from aiogram.types import Message, CallbackQuery
 from aiogram.fsm.context import FSMContext
 
 from bot.messages import get_text
-from bot.keyboards import get_main_keyboard, get_auth_keyboard, get_cancel_keyboard
+from bot.keyboards import get_main_keyboard, get_auth_keyboard, get_cancel_keyboard, get_search_results_keyboard
 from bot.states import SearchCustomerState
 from bot.services import get_user_language, is_user_authenticated, search_customers_db
 
@@ -32,7 +32,7 @@ async def search_query_handler(message: Message, state: FSMContext):
     lang = await get_user_language(message.from_user.id)
     await state.clear()
 
-    results = await search_customers_db(query)
+    results, total, page, total_pages = await search_customers_db(query, page=1)
 
     if not results:
         await message.answer(
@@ -42,24 +42,23 @@ async def search_query_handler(message: Message, state: FSMContext):
         )
         return
 
-    text = get_text("search_results_title", lang, query=query, total=len(results))
-    buttons = []
-    for c in results:
-        connected_mark = "✅" if c.is_connected else "⏳"
-        lead_mark = "⭐️" if c.is_lead else ""
-        btn_text = f"{connected_mark}{lead_mark} {c.name} ({c.phone})"
-        buttons.append([
-            InlineKeyboardButton(text=btn_text, callback_data=f"view_customer:{c.id}:1")
-        ])
+    text = get_text("search_results_title", lang, query=query, total=total)
+    keyboard = get_search_results_keyboard(results, query, page, total_pages, lang)
+    await message.answer(text=text, reply_markup=keyboard, parse_mode="HTML")
 
-    keyboard = InlineKeyboardMarkup(inline_keyboard=buttons)
-    await message.answer(
-        text=text,
-        reply_markup=keyboard,
-        parse_mode="HTML"
-    )
-    await message.answer(
-        text=get_text("main_menu_title", lang),
-        reply_markup=get_main_keyboard(lang),
-        parse_mode="HTML"
-    )
+
+@router.callback_query(F.data.startswith("search_page:"))
+async def search_page_callback(callback: CallbackQuery):
+    _, query, page = callback.data.split(":")
+    page = int(page)
+    lang = await get_user_language(callback.from_user.id)
+    results, total, page, total_pages = await search_customers_db(query, page=page)
+
+    if not results:
+        await callback.answer(get_text("search_not_found", lang, query=query), show_alert=True)
+        return
+
+    text = get_text("search_results_title", lang, query=query, total=total)
+    keyboard = get_search_results_keyboard(results, query, page, total_pages, lang)
+    await callback.message.edit_text(text=text, reply_markup=keyboard, parse_mode="HTML")
+    await callback.answer()
