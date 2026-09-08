@@ -154,3 +154,78 @@
         box-shadow: 0 0 0 0 rgba(40, 167, 69, 0);
     }
 }
+
+/* -------------------------------------------------------------
+   Luxury ZarBelle Login Page Background & Card Styling
+   ------------------------------------------------------------- */
+body.login-page {
+    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.65)), url('/static/images/login_bg.png') no-repeat center center fixed !important;
+    background-size: cover !important;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+body.login-page .login-box {
+    width: 420px;
+    max-width: 92%;
+    margin: 0 auto;
+}
+
+body.login-page .card {
+    background: rgba(254, 252, 248, 0.95) !important;
+    backdrop-filter: blur(20px) saturate(180%) !important;
+    -webkit-backdrop-filter: blur(20px) saturate(180%) !important;
+    border-radius: 1.5rem !important;
+    border: 1px solid rgba(223, 183, 67, 0.4) !important;
+    box-shadow: 0 25px 60px -10px rgba(0, 0, 0, 0.7), 0 0 35px rgba(223, 183, 67, 0.25) !important;
+    overflow: hidden;
+}
+
+body.login-page .card-header {
+    background: transparent !important;
+    border-bottom: 1px solid rgba(223, 183, 67, 0.2) !important;
+    padding-top: 1.5rem;
+    padding-bottom: 1rem;
+}
+
+body.login-page .card-body {
+    padding: 1.75rem 2rem !important;
+}
+
+body.login-page .btn-primary {
+    background: linear-gradient(135deg, #dfb743 0%, #c59b27 50%, #9a7210 100%) !important;
+    border: none !important;
+    color: #1a140a !important;
+    font-weight: 700 !important;
+    border-radius: 0.75rem !important;
+    padding: 10px 20px !important;
+    box-shadow: 0 4px 15px rgba(197, 155, 39, 0.4) !important;
+    transition: all 0.3s ease !important;
+}
+
+body.login-page .btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(197, 155, 39, 0.6) !important;
+    filter: brightness(1.08) !important;
+}
+
+body.login-page .form-control {
+    border-radius: 0.75rem !important;
+    border: 1px solid #ded6ca !important;
+    padding: 10px 14px !important;
+    font-size: 0.95rem !important;
+    background-color: #ffffff !important;
+}
+
+body.login-page .form-control:focus {
+    border-color: #c59b27 !important;
+    box-shadow: 0 0 0 0.2rem rgba(197, 155, 39, 0.25) !important;
+}
+
+body.login-page .login-box-msg {
+    font-weight: 600;
+    color: #2c2419;
+    font-size: 1rem;
+}
