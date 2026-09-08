@@ -249,3 +249,15 @@ body.login-page .login-box-msg {
     color: #2c2419 !important;
     font-size: 1rem !important;
 }
+
+/* Hide login logo above form card */
+.jazzmin-login-page .login-logo,
+body.login-page .login-logo,
+.login-box .login-logo,
+.login-logo {
+    display: none !important;
+    visibility: hidden !important;
+    height: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}

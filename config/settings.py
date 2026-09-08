@@ -173,7 +173,7 @@ JAZZMIN_SETTINGS = {
     "site_header": "Zar belle",
     "site_brand": "Zar belle",
     "site_logo": "images/logo.png",
-    "login_logo": "images/logo.png",
+    "login_logo": None,
     "site_logo_classes": "brand-image",
     "site_icon": "images/logo.png",
     "welcome_sign": "Zar belle CRM boshqaruv tizimiga xush kelibsiz",
