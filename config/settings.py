@@ -69,7 +69,7 @@ CORS_ALLOW_ALL_ORIGINS = True  # yoki faqat frontend domenini qo‘shing
 TEMPLATES = [
     {
         "BACKEND": "django.template.backends.django.DjangoTemplates",
-        "DIRS": [BASE_DIR / "templates"],
+        "DIRS": [],
         "APP_DIRS": True,
         "OPTIONS": {
             "context_processors": [
